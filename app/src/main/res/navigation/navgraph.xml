@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.mac.View.FirstFragment"
+        android:label=""
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_addUser"
+            app:destination="@id/addUser" />
+        <action
+            android:id="@+id/action_firstFragment_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.mac.View.SecondFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_secondFragment_to_addUser"
+            app:destination="@id/addUser" />
+        <action
+            android:id="@+id/action_secondFragment_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUser"
+        android:name="com.example.mac.View.AddUser"
+        android:label="fragment_add_user"
+        tools:layout="@layout/fragment_add_user" >
+        <action
+            android:id="@+id/action_addUser_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_addUser_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_addUser_to_firstFragment2"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_addUser_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
+    <fragment
+        android:id="@+id/userData"
+        android:name="com.example.mac.View.UserData"
+        android:label="Data"
+        tools:layout="@layout/fragment_user_data" >
+        <action
+            android:id="@+id/action_userData_to_addUser"
+            app:destination="@id/addUser" />
+        <action
+            android:id="@+id/action_userData_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+</navigation>

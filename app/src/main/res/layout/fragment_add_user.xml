@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.AddUser">
+    <EditText
+        android:id="@+id/username_et"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:autofillHints="emailAddress"
+        android:hint="Email"
+        android:textStyle="bold"
+        android:paddingStart="8dp"
+        android:textColor="@color/black"
+        android:background="@drawable/editt_text"
+        android:inputType="textWebEmailAddress"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+    <EditText
+        android:id="@+id/firstnameet"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:autofillHints="name"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:hint="First Name"
+        android:paddingStart="8dp"
+        android:background="@drawable/editt_text"
+        android:layout_below="@id/username_et"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+    <EditText
+        android:id="@+id/lastnameet"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:autofillHints="name"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:hint="Last Name"
+        android:paddingStart="8dp"
+        android:background="@drawable/editt_text"
+        android:layout_below="@id/firstnameet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+    <EditText
+        android:id="@+id/rollNo"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:autofillHints="password"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:hint="RollNo"
+        android:paddingStart="8dp"
+        android:background="@drawable/editt_text"
+        android:layout_below="@id/lastnameet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+    <Button
+        android:id="@+id/addbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AddData"
+        android:layout_below="@id/rollNo"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:layout_below="@id/addbtn"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/viewData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Data "
+        android:layout_below="@id/signout"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

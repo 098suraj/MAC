@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".View.FirstFragment">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        app:lottie_autoPlay="true"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button_first"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/get"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@color/white"
+        android:textColor="#01579B"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/button_first"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/crashButton"/>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_baseline_arrow_forward_24"
+            style="@style/Widget.Material3.CardView.Elevated"/>
+    </com.google.android.material.card.MaterialCardView>
+    <Button
+        android:id="@+id/button_first"
+        style="@style/Widget.Material3.Chip.Input.Icon.Elevated"
+        android:layout_width="390dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/getting_started"
+        android:textAlignment="textStart"
+        app:icon="@drawable/ic_baseline_arrow_forward_24"
+        app:iconGravity="end"
+        android:textColor="@color/white"
+        app:shapeAppearance="@drawable/button_normal" />
+
+</RelativeLayout>
