@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_secondFragment_to_userData"
             app:destination="@id/userData" />
+        <action
+            android:id="@+id/action_secondFragment_to_covidFragment"
+            app:destination="@id/covidFragment" />
     </fragment>
     <fragment
         android:id="@+id/addUser"
@@ -62,4 +65,9 @@
             android:id="@+id/action_userData_to_secondFragment"
             app:destination="@id/secondFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/covidFragment"
+        android:name="com.example.mac.View.covidFragment"
+        android:label="fragment_covid"
+        tools:layout="@layout/fragment_covid" />
 </navigation>

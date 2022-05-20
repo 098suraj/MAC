@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".View.UserData">
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:layout_width="match_parent"
-       android:layout_height="670dp"
-       tools:listitem="@layout/item"
-       android:id="@+id/recycelr_userData"/>
+   <com.github.mikephil.charting.charts.BarChart
+       android:layout_width="370dp"
+      android:id="@+id/chart"
+       android:layout_marginTop="170dp"
+      android:layout_centerHorizontal="true"
+       android:layout_height="270dp"/>
 
    <ProgressBar
        android:id="@+id/listProgressbar"
@@ -23,7 +24,8 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:text="Sign Out"
-       android:layout_below="@id/recycelr_userData"
+       android:layout_marginTop="20dp"
+       android:layout_below="@id/chart"
        android:backgroundTint="@color/black"
        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

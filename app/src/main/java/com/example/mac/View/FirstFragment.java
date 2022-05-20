@@ -27,6 +27,7 @@ import com.example.mac.databinding.FragmentFirstBinding;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -75,6 +76,7 @@ public class FirstFragment extends Fragment {
                 navController.navigate(R.id.action_firstFragment_to_secondFragment);
             }
         });
+        ((MainActivity) requireActivity()).updateStatusBarColor("#00000000");
 
         binding.animationview.addAnimatorListener(new AnimatorListenerAdapter() {
             public void onAnimationEnd(Animator animation, boolean isReverse) {
@@ -84,12 +86,6 @@ public class FirstFragment extends Fragment {
         });
 
 
-       binding.crashButton.setText("Test Crash");
-        binding.crashButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                throw new RuntimeException("Test Crash"); // Force a crash
-            }
-        });
 
 
 

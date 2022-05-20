@@ -1,9 +1,8 @@
 package com.example.mac.Model;
 
 public class Users {
-    String random1="-";
-    String random2="-";
-
+    String random1 = "-";
+    String random2 = "-";
 
     public String getRandom1() {
         return random1;
@@ -21,6 +20,6 @@ public class Users {
         this.random2 = random2;
     }
 
-
-    public Users(){}
+    public Users() {
+    }
 }

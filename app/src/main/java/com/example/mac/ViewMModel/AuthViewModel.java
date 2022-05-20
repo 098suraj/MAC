@@ -14,19 +14,20 @@ public class AuthViewModel extends AndroidViewModel {
     MutableLiveData<FirebaseUser> mutableLiveData;
     AuthRepo authRepo;
 
-    public FirebaseUser getCurrentUser() {
-        return currentUser;
-    }
-
-    public MutableLiveData<FirebaseUser> getMutableLiveData() {
-        return mutableLiveData;
-    }
 
     public AuthViewModel(@NonNull Application application) {
         super(application);
         authRepo = new AuthRepo(application);
         this.currentUser = authRepo.getFirebaseAuth().getCurrentUser();
         this.mutableLiveData = authRepo.getMutableLiveData();
+    }
+
+    public FirebaseUser getCurrentUser() {
+        return currentUser;
+    }
+
+    public MutableLiveData<FirebaseUser> getMutableLiveData() {
+        return mutableLiveData;
     }
 
     public void signUp(String email, String password) {

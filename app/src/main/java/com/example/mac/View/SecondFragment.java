@@ -21,6 +21,8 @@ import com.example.mac.ViewMModel.AuthViewModel;
 import com.example.mac.databinding.FragmentSecondBinding;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 
 public class SecondFragment extends Fragment {
     FragmentSecondBinding binding;
@@ -39,7 +41,7 @@ public class SecondFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSecondBinding.inflate(inflater, container, false);
@@ -49,33 +51,38 @@ public class SecondFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        try {
+            ((MainActivity) requireActivity()).updateStatusBarColor("#1967D2");
+        }catch (Exception e){
+            Toast.makeText(getContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();;
+        }
 
         //----------------------------buttonClick-------------------------------------//
-        binding.registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                String age = binding.rollNo.getText().toString();
-                String userName = binding.usernameEt.getText().toString();
-                if (!userName.isEmpty() && !age.isEmpty()) {
-                    viewModel.signUp(userName, age);
-
-                    viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), new Observer<FirebaseUser>() {
-                        @Override
-                        public void onChanged(FirebaseUser firebaseUser) {
-                            if (firebaseUser != null) {
-                                Toast.makeText(getContext(), "Now Login", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(getContext(), "Please Enter Email and Pass", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-
-                }
-
-            }
-        });
+//        binding.registerBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//
+//                String age = binding.rollNo.getText().toString();
+//                String userName = binding.usernameEt.getText().toString();
+//                if (!userName.isEmpty() && !age.isEmpty()) {
+//                    viewModel.signUp(userName, age);
+//
+//                    viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), new Observer<FirebaseUser>() {
+//                        @Override
+//                        public void onChanged(FirebaseUser firebaseUser) {
+//                            if (firebaseUser != null) {
+//                                Toast.makeText(getContext(), "Now Login", Toast.LENGTH_SHORT).show();
+//                            } else {
+//                                Toast.makeText(getContext(), "Please Enter Email and Pass", Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
+//                    });
+//
+//                }
+//
+//            }
+//        });
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +99,12 @@ public class SecondFragment extends Fragment {
                         public void onChanged(FirebaseUser firebaseUser) {
                             if (firebaseUser != null) {
                                 Log.i("Firebaselogin", "onChanged: ");
-                                Navigation.findNavController(view).navigate(R.id.action_secondFragment_to_userData);
+                                try {
+                                    Navigation.findNavController(view).navigate(R.id.action_secondFragment_to_userData);
+                                }catch (Exception e){
+                                    Toast.makeText(getContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                                }
+
                             }
                         }
                     });
@@ -107,5 +119,7 @@ public class SecondFragment extends Fragment {
 
         //--------------------------------------------------------------000-----------------------------------//
     }
+
+
 }
 

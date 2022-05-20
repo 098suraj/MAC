@@ -25,13 +25,7 @@
         android:textStyle="bold"
         android:background="@color/white"
         android:textColor="#01579B"/>
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_above="@id/button_first"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/crashButton"/>
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
