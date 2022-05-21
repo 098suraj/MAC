@@ -13,16 +13,16 @@
         android:layout_marginTop="60dp" />
 
     <TextView
-        android:layout_width=""
-        android:layout_height=""
-    <Spinner
-        android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chart"
+        android:id="@+id/tv"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        
-        android:layout_marginBottom="338dp"
-        android:spinnerMode="dropdown" />
+        android:layout_below="@+id/chart"
+        android:text="Select Destination"
+        android:textSize="16sp"
+        android:layout_toLeftOf="@+id/spinner"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/black"/>
+
+
 </RelativeLayout>

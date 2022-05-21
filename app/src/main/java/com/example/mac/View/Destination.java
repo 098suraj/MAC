@@ -2,13 +2,26 @@ package com.example.mac.View;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
+import com.example.mac.Model.Zones;
 import com.example.mac.R;
+import com.example.mac.ViewMModel.AuthViewModel;
+import com.example.mac.ViewMModel.ChartViewModel;
+import com.example.mac.databinding.FragmentDestinationBinding;
+import com.github.mikephil.charting.data.BarDataSet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,13 +29,19 @@ import com.example.mac.R;
  * create an instance of this fragment.
  */
 public class Destination extends Fragment {
+    AuthViewModel authViewModel;
+    ChartViewModel chartViewModel;
+    ProgressBar progressBar;
+    NavController navController;
+    List<Zones> s;
+    List<String> m = new ArrayList<>();
+    BarDataSet barDataSet;
+    FragmentDestinationBinding fragmentDestinationBinding;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
@@ -30,15 +49,7 @@ public class Destination extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Destination.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static Destination newInstance(String param1, String param2) {
         Destination fragment = new Destination();
         Bundle args = new Bundle();
@@ -61,6 +72,16 @@ public class Destination extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_destination, container, false);
+        fragmentDestinationBinding= FragmentDestinationBinding.inflate(inflater, container, false);
+        return  fragmentDestinationBinding.getRoot();
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        authViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory
+                .getInstance(getActivity().getApplication())).get(AuthViewModel.class);
+        chartViewModel=new ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(ChartViewModel.class);
+    }
+
 }

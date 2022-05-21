@@ -6,4 +6,14 @@
        Better Decision ,Better Productivity
    </string>
     <string name="getting_started">Getting Started</string>
+
+
+        <string-array name="zones">
+            <item>Cafeteria</item>
+            <item>Library</item>
+            <item>E-Block</item>
+            <item>Ground</item>
+
+        </string-array>
+
 </resources>

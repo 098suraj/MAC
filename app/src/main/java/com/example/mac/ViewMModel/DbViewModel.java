@@ -17,7 +17,6 @@ public class DbViewModel extends AndroidViewModel implements DbRepo.dataBaseEven
     private DbRepo repo;
     MutableLiveData<List<Zones>> listMutableLiveData = new MutableLiveData<>();
     MutableLiveData<List<String >> listMutableLive = new MutableLiveData<>();
-
     public MutableLiveData<List<String>> getListMutableLive() {
         return listMutableLive;
     }
