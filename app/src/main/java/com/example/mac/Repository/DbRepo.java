@@ -63,12 +63,13 @@ public class DbRepo {
                     zones.add(ds.getKey());
                   //  System.out.println(ds);
                     dataBaseEventListner.OnCompleteZones(zones);
+                    zonesitems.clear();
                     fdb.getReference("placeA").child(ds.getKey()).child("data").limitToLast(1).addValueEventListener(new ValueEventListener() {
                         @Override
 
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             try {
-                                
+
                                 for (DataSnapshot qo: snapshot.getChildren()
                                      ) {
                                     Zones zi=qo.getValue(Zones.class);
@@ -76,8 +77,6 @@ public class DbRepo {
 
 
                                 }
-                                System.out.println(zonesitems.size());
-                                System.out.println(zonesitems.get(0).getZone());
                                 dataBaseEventListner.OnComplete(zonesitems);
                             }catch (Exception e ){
                                 Toast.makeText(application.getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();

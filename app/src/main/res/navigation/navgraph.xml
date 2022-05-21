@@ -64,10 +64,82 @@
         <action
             android:id="@+id/action_userData_to_secondFragment"
             app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_userData_to_cafeteria2"
+            app:destination="@id/cafeteria2" />
+        <action
+            android:id="@+id/action_userData_to_ground2"
+            app:destination="@id/ground2" />
+        <action
+            android:id="@+id/action_userData_to_eblock2"
+            app:destination="@id/eblock2" />
+        <action
+            android:id="@+id/action_userData_to_destination2"
+            app:destination="@id/destination2" />
+        <action
+            android:id="@+id/action_userData_to_library2"
+            app:destination="@id/library2" />
+        <action
+            android:id="@+id/action_userData_to_event"
+            app:destination="@id/event" />
     </fragment>
     <fragment
         android:id="@+id/covidFragment"
         android:name="com.example.mac.View.covidFragment"
         android:label="fragment_covid"
         tools:layout="@layout/fragment_covid" />
+    <fragment
+        android:id="@+id/cafeteria2"
+        android:name="com.example.mac.View.Cafeteria"
+        android:label="fragment_cafeteria"
+        tools:layout="@layout/fragment_cafeteria" >
+        <action
+            android:id="@+id/action_cafeteria2_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination2"
+        android:name="com.example.mac.View.Destination"
+        android:label="fragment_destination"
+        tools:layout="@layout/fragment_destination" >
+        <action
+            android:id="@+id/action_destination2_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
+    <fragment
+        android:id="@+id/eblock2"
+        android:name="com.example.mac.View.Eblock"
+        android:label="fragment_eblock"
+        tools:layout="@layout/fragment_eblock" >
+        <action
+            android:id="@+id/action_eblock2_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
+    <fragment
+        android:id="@+id/ground2"
+        android:name="com.example.mac.View.Ground"
+        android:label="fragment_ground"
+        tools:layout="@layout/fragment_ground" >
+        <action
+            android:id="@+id/action_ground2_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
+    <fragment
+        android:id="@+id/library2"
+        android:name="com.example.mac.View.Library"
+        android:label="fragment_library"
+        tools:layout="@layout/fragment_library" >
+        <action
+            android:id="@+id/action_library2_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
+    <fragment
+        android:id="@+id/event"
+        android:name="com.example.mac.View.Event"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" >
+        <action
+            android:id="@+id/action_event_to_userData"
+            app:destination="@id/userData" />
+    </fragment>
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.mac.Adapter;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,21 +10,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mac.Model.Users;
+import com.example.mac.Model.Zones;
+import com.example.mac.R;
 import com.example.mac.databinding.ItemBinding;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    private List<Users>usersList;
+    private List<Zones>usersList;
     private static final String TAG = "RecyclerAdapter";
-    private List<Users> stringList = new ArrayList<>();
+    private Map<String,Integer> stringList = new HashMap<>();
+    int[] colors = {Color.rgb(255,200,255), Color.rgb(255,242,0),Color.rgb(225,245,255),Color.rgb(200,255,255)};
 
-    public void updateList(List<Users> stringList) {
-        this.stringList = stringList;
-    }
 
-    public void setUsersList(List<Users> usersList) {
+    public void setUsersList(List<Zones> usersList) {
         this.usersList = usersList;
     }
 
@@ -35,12 +39,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return new ViewHolder(recyclerRowBinding);
     }
 
+    public RecyclerAdapter(List<Zones> usersList) {
+        this.usersList = usersList;
+    }
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String firstname=usersList.get(position).getRandom1().toString();
-        String lasttname=usersList.get(position).getRandom2().toString();
-        holder.bindView(firstname,lasttname);
-
+        String s=usersList.get(position).getZone();
+        int t=usersList.get(position).getSocialD();
+        System.out.println(usersList.get(position).getZone());
+        holder.bindView(s,t,position);
     }
 
     @Override
@@ -68,9 +76,24 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             });
         }
 
-        public void bindView(String firstname,String lastname) {
-            recyclerRowBinding.textView.setText(firstname);
-            recyclerRowBinding.lastnamercy.setText(lastname);
+        public void bindView(String s,int t,int k) {
+            if (k==0){
+                recyclerRowBinding.textView.setText("Cafeteria");
+            }
+            if (k==1){
+                recyclerRowBinding.textView.setText("Library");
+            }if (k==2){
+                recyclerRowBinding.textView.setText("E-Block");
+            }if (k==3){
+                recyclerRowBinding.textView.setText("Ground");
+            }
+
+           recyclerRowBinding.lastnamercy.setText(String.valueOf(t));
+            if (k<4){
+                recyclerRowBinding.textView.setBackgroundColor(colors[k]);
+            }
+
+
 
         }
     }
