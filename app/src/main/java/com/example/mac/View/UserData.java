@@ -137,14 +137,17 @@ public class UserData extends Fragment {
                         k.add(new BarEntry(1.25f, zones.get(1).getSocialD()));
                         k.add(new BarEntry(2.25f, zones.get(2).getSocialD()));
                         k.add(new BarEntry(3.25f, zones.get(3).getSocialD()));
+
                         if(zones.get(0).getSocialD()>zones.get(1).getSocialD() && zones.get(0).getSocialD()>zones.get(2).getSocialD() && zones.get(0).getSocialD()>zones.get(3).getSocialD()){
-                            q="Cafeteria";
-                        }
-                        if(zones.get(1).getSocialD()>zones.get(0).getSocialD() && zones.get(1).getSocialD()>zones.get(2).getSocialD() && zones.get(1).getSocialD()>zones.get(3).getSocialD()){
                             q="Library";
                         }
-                        if(zones.get(2).getSocialD()>zones.get(1).getSocialD() && zones.get(2).getSocialD()>zones.get(0).getSocialD() && zones.get(2).getSocialD()>zones.get(3).getSocialD()){
+                        if(zones.get(1).getSocialD()>zones.get(0).getSocialD() && zones.get(1).getSocialD()>zones.get(2).getSocialD() && zones.get(1).getSocialD()>zones.get(3).getSocialD()){
+
                             q="E-Block";
+                        }
+                        if(zones.get(2).getSocialD()>zones.get(1).getSocialD() && zones.get(2).getSocialD()>zones.get(0).getSocialD() && zones.get(2).getSocialD()>zones.get(3).getSocialD()){
+
+                            q="Cafeteria";
                         }
                         if(zones.get(3).getSocialD()>zones.get(1).getSocialD() && zones.get(3).getSocialD()>zones.get(2).getSocialD() && zones.get(3).getSocialD()>zones.get(0).getSocialD()){
                             q="Ground";
@@ -167,10 +170,6 @@ public class UserData extends Fragment {
 
                     binding.chart.getDescription().setText("Covizone");
                     binding.chart.animateY(0);
-                    recyclerAdapter = new RecyclerAdapter(zones);
-                    binding.recv.hasFixedSize();
-                    binding.recv.setLayoutManager(new LinearLayoutManager(getContext()));
-                    binding.recv.setAdapter(recyclerAdapter);
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         CharSequence name = "Suraj";
@@ -180,6 +179,7 @@ public class UserData extends Fragment {
 
                         // Register the channel with the system; you can't change the importance
                         // or other notification behaviors after this
+                        System.out.println(q+"suraj");
                         NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
                         assert notificationManager != null;
                         notificationManager.createNotificationChannel(channel);

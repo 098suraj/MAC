@@ -100,7 +100,7 @@
     <fragment
         android:id="@+id/destination2"
         android:name="com.example.mac.View.Destination"
-        android:label="fragment_destination"
+        android:label="Destination"
         tools:layout="@layout/fragment_destination" >
         <action
             android:id="@+id/action_destination2_to_userData"

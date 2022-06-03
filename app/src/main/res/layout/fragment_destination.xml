@@ -11,7 +11,14 @@
         android:layout_height="270dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp" />
-
+    <ProgressBar
+        android:id="@+id/listProgressbar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:indeterminateTint="@color/black" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,8 +27,44 @@
         android:layout_below="@+id/chart"
         android:text="Select Destination"
         android:textSize="16sp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:textColor="@color/black"/>
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:id="@+id/caf"
+        android:layout_toRightOf="@+id/tv"
+        android:layout_below="@+id/chart"
+        android:text="Cafeteria"/>
 
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:id="@+id/library"
+        android:layout_toRightOf="@+id/tv"
+        android:layout_below="@+id/caf"
+        android:layout_marginTop="10dp"
+        android:text="Library"
+        android:layout_marginRight="20dp"/>
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/tv"
+        android:layout_below="@+id/library"
+        android:id="@+id/eblock"
+        android:layout_marginTop="10dp"
+        android:text="E-Block"
+        android:layout_marginRight="20dp"/>
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/tv"
+        android:layout_below="@+id/eblock"
+        android:id="@+id/ground"
+        android:layout_marginTop="10dp"
+        android:text="Ground"
+        android:layout_marginRight="20dp"/>
 
 </RelativeLayout>

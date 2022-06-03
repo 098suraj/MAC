@@ -90,9 +90,9 @@ public class SecondFragment extends Fragment {
 
                 String age = binding.rollNo.getText().toString();
                 String userName = binding.usernameEt.getText().toString();
-                if (!userName.isEmpty() && !age.isEmpty()) {
-                    viewModel.singIn(userName, age);
 
+                    if (!userName.isEmpty() && !age.isEmpty()) {
+                        viewModel.singIn(userName, age);
 
                     viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), new Observer<FirebaseUser>() {
                         @Override

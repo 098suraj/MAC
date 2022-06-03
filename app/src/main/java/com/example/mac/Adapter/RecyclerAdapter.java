@@ -78,12 +78,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         public void bindView(String s,int t,int k) {
             if (k==0){
-                recyclerRowBinding.textView.setText("Cafeteria");
+                recyclerRowBinding.textView.setText("Library");
             }
             if (k==1){
-                recyclerRowBinding.textView.setText("Library");
-            }if (k==2){
                 recyclerRowBinding.textView.setText("E-Block");
+            }if (k==2){
+                recyclerRowBinding.textView.setText("Cafeteria");
             }if (k==3){
                 recyclerRowBinding.textView.setText("Ground");
             }
